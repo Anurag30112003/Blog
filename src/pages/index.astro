@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const posts = await Astro.glob('../posts/*.md')
+---
+<Layout>
+	  <h1>Blogs</h1>
+
+	  <div>
+		{posts.map(post =>(
+			<h3>{post.frontmatter.title}</h3>
+			<p>{post.frontmatter.excerpt}</p>
+			<a href={`/${post.frontmatter.slug}`}>Read More</a>
+		))}
+	  </div>
+</Layout>
