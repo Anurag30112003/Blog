@@ -8,6 +8,14 @@ module.exports = {
 				'second': '#f3f8ff',
 				'third': '#8e84d0',
 			},
+			screens: {
+				sm: "450px",
+		
+				md: "768px",
+		
+		
+				lg: "1350px",
+			  },
 		},
 	},
 	plugins: [],

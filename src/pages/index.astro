@@ -5,13 +5,13 @@ const posts = await Astro.glob("../posts/*.md");
 ---
 
 <Layout>
-  <h1 class="text-4xl text-center my-5 underline decoration-third decoration-4">
+  <h1 class="text-4xl text-center my-0 underline decoration-third decoration-4 md:my-5">
     Posts
   </h1>
 
   {
     posts.map((post) => (
-      <div class=" text-center outline outline-third outline-2 my-10  text-xl py-8">
+      <div class=" text-center outline outline-third outline-2 my-10  text-xl py-8 px-10">
         <div class="text-3xl">{post.frontmatter.title}</div>
         <p class="mt-4 mb-8">{post.frontmatter.excerpt}</p>
 		
