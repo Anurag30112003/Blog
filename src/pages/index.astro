@@ -1,16 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob('../posts/*.md')
+const posts = await Astro.glob("../posts/*.md");
 ---
-<Layout>
-	  <h1>Posts</h1>
 
-	  <div>
-		{posts.map(post =>(
-			<h3>{post.frontmatter.title}</h3>
-			<p>{post.frontmatter.excerpt}</p>
-			<a href={`/${post.frontmatter.slug}`}>Read More</a>
-		))}
-	  </div>
+<Layout>
+  <h1 class="text-4xl text-center my-5 underline decoration-third decoration-4">
+    Posts
+  </h1>
+
+  {
+    posts.map((post) => (
+      <div class=" text-center outline outline-third outline-2 my-10  text-xl py-8">
+        <div class="text-3xl">{post.frontmatter.title}</div>
+        <p class="mt-4 mb-8">{post.frontmatter.excerpt}</p>
+		
+        <a
+          href={`/${post.frontmatter.slug}`}
+          class="text-second bg-third px-10 py-4 text-2xl hover:bg-second hover:text-third border-2 border-third "
+        >
+          Read More
+        </a>
+      </div>
+    ))
+  }
 </Layout>

@@ -1,24 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 export async function getStaticPaths() {
-    const posts = await Astro.glob('../posts/*.md')
-    
-    return posts.map(post =>({
-        params:{
-            slug: post.frontmatter.slug
-        },
-        props:{
-            post
-        }
-    }))
+  const posts = await Astro.glob("../posts/*.md");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
 }
 
-const {Content , frontmatter} = Astro.props.post
+const { Content, frontmatter } = Astro.props.post;
 ---
-<Layout >
-    <div>
-        <a href="/">Go Back</a>
-        <h2>{frontmatter.title}</h2>
-        <Content/>
+
+<Layout>
+  <div>
+    <div class="mt-5"></div>
+    <a
+      href="/"
+      class="text-second bg-third px-8 py-2 text-xl hover:bg-second hover:text-third border-2 border-third"
+      > <i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a
+    >
+    <h2 class="text-3xl my-5 text-center">{frontmatter.title}</h2>
+    <div class="text-xl mb-5">Written On - {new Date (frontmatter.date).toLocaleDateString()}</div>
+    <div class="text-xl mb-10">
+      <Content />
     </div>
+  </div>
 </Layout>

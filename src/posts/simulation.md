@@ -5,7 +5,6 @@ excerpt : Is the world we are living in is a computer simulation ?
 date: 2021-04-11
 ---
 
-Are we in a simulation ?
 
       
 One of the most asked questions now-a-days (special thanks to Elon) is `Are we in Simulation? `. My thought/answer upon this is that it's contradicting. Imagine a coin, it has two phases head and a tail , like that an argument also has points that lie towards and away. 

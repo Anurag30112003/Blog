@@ -2,7 +2,13 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'first': '#1f1c1c',
+				'second': '#f3f8ff',
+				'third': '#8e84d0',
+			},
+		},
 	},
 	plugins: [],
 }
